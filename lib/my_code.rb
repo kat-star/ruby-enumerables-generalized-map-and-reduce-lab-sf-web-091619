@@ -20,7 +20,7 @@ def reduce(array, starting_point = nil)
     i = 1
   end
   #nil, false 
-  #order matters when doing reduce
+  #order matters when doing reduce with conditional short circuit
   while i < array.length
     result = yield(result, array[i])
     i += 1
