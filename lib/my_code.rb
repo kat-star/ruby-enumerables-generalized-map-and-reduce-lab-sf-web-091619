@@ -11,8 +11,14 @@ end
 # map([1, 2, 3]) { |pizza| pizza * 2 } #think of this as an anonymous method (a regular method without a name, and yield just calls it **so dont need to give it a name)
 
 def reduce(array, starting_point = nil)
-  result = starting_point
-  i = 0
+  
+  if starting_point
+    result = starting_point
+    i = 0
+  else
+    i = 1
+    result = array[0]
+  end
   
   while i < array.length
     result = yield(array[i], result)
